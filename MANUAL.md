@@ -1,4 +1,4 @@
-# PolarFCS
+# PolarFCS Standalone (see note for MATLAB users below)
 Installation instructions can be found in the "README.md" file
 
 ## PolarFCS Masthead
@@ -20,3 +20,8 @@ MATLAB has restrictions on what sort of strings may be used as variable names (i
 After the initial plot is produced, users can alter the scale and position of the polar axes in order to tease apart event subsets. In order to facilitate ease of computation, users must adjust the polar axes and click on "Re-Calculate" to complete their changes. Similarly, in order to re-calculate the number of events in the counting field, users must also click on "Re-Calculate". PolarFCS will entitle the plot with the name of the input file.
 
 Since the plot window is an instance of MATLAB, users can employ the basic MATLAB figure window functions to save, export, print, etc. These functions are accessible under the File menu. Users can also pan, rotate and scale plots using the icons to the top left of the plot.
+
+# MATLAB users (makefcspolarscatter.m)
+MATLAB users may use the makefcspolarscatter.m script from the commandline, which will take input data, parameter lists, plot title, and a color matrix directly, avoiding the standalone Masthead & parameter selection GUIs.
+
+The makefcspolarscatter.m function takes input data (first argument), an n x m matrix with n rows that are assumed to represent events and m columns assumed to be parameters (column/row headers absent). Other variable arguments include: 'Parameters', a cell of strings to be used as parameter labels for plotting; 'PlotTitle', a string title for the plot; 'ColorProfile', RGB format color data, either a single vector (eg [0 0 1] for blue) or n x 3 matrix with event-specific color settings (for data subset specific coloring, based, for example, on previously generated gating or membership strategies).
